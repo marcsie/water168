@@ -120,8 +120,18 @@
             line-height: 1.8;
         }
 
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background: #e74c3c;
             color: white;
             padding: 1rem 2rem;
@@ -130,12 +140,23 @@
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            white-space: nowrap;
         }
 
         .cta-button:hover {
             background: #c0392b;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .line-button {
+            background: #00C300;
+            box-shadow: 0 4px 15px rgba(0, 195, 0, 0.3);
+        }
+
+        .line-button:hover {
+            background: #00A000;
+            box-shadow: 0 6px 20px rgba(0, 195, 0, 0.4);
         }
 
         /* Services Section */
@@ -362,7 +383,17 @@
             }
         }
 
-        @media (max-width: 480px) {
+            @media (max-width: 480px) {
+                .cta-buttons {
+                    flex-direction: column;
+                    gap: 0.8rem;
+                }
+                
+                .cta-button {
+                    padding: 0.8rem 1.5rem;
+                    font-size: 0.9rem;
+                }
+            }
             .hero {
                 padding: 3rem 0;
             }
@@ -433,7 +464,13 @@
             <p class="description">
                 井英股份有限公司，具備有甲等鑿井商執照，於沉水馬達與鑿井業界已有30年以上經驗，台灣從北到南皆可提供專業服務，歡迎來電洽詢。
             </p>
-            <a href="#contact" class="cta-button">立即諮詢</a>
+            <div class="cta-buttons">
+                <a href="tel:+886926010732" class="cta-button">電話聯繫</a>
+                <a href="https://lin.ee/Wff3487" class="cta-button line-button">
+                    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="20" style="vertical-align: middle; margin-right: 8px;">
+                Line聯繫
+                </a>
+            </div>
         </div>
     </section>
 
@@ -513,7 +550,13 @@
             <h2>聯絡我們</h2>
             <p>30年以上專業經驗，台灣從北到南皆可提供專業服務</p>
             <p>歡迎來電洽詢，我們將由負責人親自為您服務</p>
-            <a href="tel:+886-4-xxxx-xxxx" class="cta-button">立即致電</a>
+            <div class="cta-buttons">
+                <a href="tel:+886926010732" class="cta-button">📞 電話聯繫</a>
+                <a href="https://lin.ee/Wff3487" class="cta-button line-button">
+                    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="20" style="vertical-align: middle; margin-right: 8px;">
+                    Line聯繫
+                </a>
+            </div>
         </div>
     </section>
 
