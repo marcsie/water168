@@ -3,98 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>井英股份有限公司 | 甲等鑿井 ‧ 水井工程</title>
-  <meta name="description" content="井英股份有限公司 — 政府審定甲等鑿井業者，30 年專業經驗，提供水井設計施工、沉水馬達維修、水權申請與地下水控制等整合服務。" />
-  <!-- 行動優先 RWD，使用 Tailwind CDN -->
+  <title>井英股份有限公司｜甲等鑿井 · 水井工程</title>
+  <meta name="description" content="政府審定甲等鑿井業者，30 年專業經驗，提供水井設計、施工、沉水馬達維修、水權申請與地下水控制工程整合服務。">
+  <!-- Tailwind CDN：Mobile‑First RWD -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Heroicons CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/dist/24/outline.min.js" defer></script>
   <style>
-    @media (min-width: 1024px) {
-      #hero h1 { font-size: 4rem; }
-    }
-    html { scroll-behavior: smooth; }
+    /* 互動微動畫 */
+    [data-animate] { opacity:0; transform: translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+    .animate-in { opacity:1; transform: none; }
+    html { scroll-behavior:smooth; }
   </style>
 </head>
-<body class="font-sans antialiased bg-gray-100 text-gray-900">
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
   <!-- 導覽列 -->
-  <header class="bg-white shadow fixed top-0 left-0 right-0 z-10">
-    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-      <span class="text-xl font-bold">井英股份有限公司</span>
-      <nav class="space-x-4 text-sm">
-        <a href="#about" class="hover:text-indigo-600">關於</a>
-        <a href="#services" class="hover:text-indigo-600">服務</a>
-        <a href="#contact" class="hover:text-indigo-600">聯絡</a>
+  <header class="bg-white/70 backdrop-blur shadow-sm fixed inset-x-0 top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <span class="text-lg md:text-xl font-bold text-emerald-700">井英股份有限公司</span>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="#about" class="hover:text-emerald-600">關於</a>
+        <a href="#services" class="hover:text-emerald-600">服務</a>
+        <a href="#projects" class="hover:text-emerald-600">案例</a>
+        <a href="#contact" class="hover:text-emerald-600">聯絡</a>
       </nav>
     </div>
   </header>
 
-  <main class="mt-16">
-    <!-- Hero 區塊 -->
-    <section id="hero" class="min-h-screen flex flex-col items-center justify-center bg-cover bg-center" style="background-image:url('https://source.unsplash.com/featured/1080x1920?waterwell');">
-      <h1 class="text-4xl font-extrabold text-white drop-shadow-lg mb-4 text-center">政府核可甲等鑿井業者</h1>
-      <p class="text-lg text-white text-center max-w-md">30+ 年專業水井工程經驗，服務遍及全台。</p>
-      <a href="#contact" class="mt-8 inline-block bg-indigo-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition">立即洽詢</a>
+  <main class="mt-16 md:mt-20">
+    <!-- Hero -->
+    <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center relative bg-fixed bg-center bg-cover" style="background-image:url('https://images.unsplash.com/photo-1508711046807-03fd9a504ea0?auto=format&fit=crop&w=1920&q=80');">
+      <div class="absolute inset-0 bg-emerald-900/50"></div>
+      <div class="relative max-w-xl mx-auto px-4 text-center text-gray-100" data-animate>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-snug drop-shadow-md">政府核可甲等鑿井業者</h1>
+        <p class="text-base sm:text-lg mb-8">30+ 年地下水專業，量身打造安全穩定的取水方案</p>
+        <a href="#contact" class="inline-block rounded-full bg-emerald-600 px-8 py-3 text-white font-semibold shadow-lg hover:bg-emerald-700 transition">立即洽詢</a>
+      </div>
+      <!-- 波浪分隔 -->
+      <svg class="absolute bottom-0 w-full" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1440v80H0V0Z" fill="#fff"/><path d="M0 40s144 40 360 40 360-40 540-40 360 40 540 40V0H0v40Z" fill="#f9fafb"/></svg>
     </section>
 
     <!-- 公司簡介 -->
     <section id="about" class="py-16 bg-white">
-      <div class="max-w-3xl mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-6">公司簡介</h2>
-        <p class="leading-relaxed">井英股份有限公司位於南投市果稟路 15 號，為政府審定之<strong>甲等鑿井業者</strong>。自創立以來，憑藉專業技術與豐富實務經驗，協助全台工業、農業與民生單位取得穩定且安全的地下水資源，並提供水權申請到後續維護的一站式服務。</p>
+      <div class="max-w-4xl mx-auto px-4" data-animate>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">公司簡介</h2>
+        <p class="leading-relaxed text-gray-700">井英股份有限公司位於南投市果稟路 15 號，為政府審定之<strong>甲等鑿井業者</strong>。我們以專業技術與豐富實務經驗，協助全台工業、農業、民生單位取得穩定、安全的地下水，並提供水權申請、沉水馬達維護到祛水工程的全方位服務。</p>
       </div>
     </section>
 
     <!-- 服務項目 -->
     <section id="services" class="py-16 bg-gray-50">
-      <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-10 text-center">主要服務</h2>
+      <div class="max-w-5xl mx-auto px-4" data-animate>
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center text-emerald-700">主要服務</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3 class="text-xl font-semibold mb-2">水井設計與施工</h3>
-            <p class="text-sm leading-relaxed">依照工業、農業與民生需求量身規劃，確保出水量與水質符合標準。</p>
+          <!-- Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
+            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-wrench-screwdriver"></use></svg></div>
+            <h3 class="text-lg font-semibold mb-2">水井設計與施工</h3>
+            <p class="text-sm leading-relaxed text-gray-600">量身規劃井深與濾層，確保水量、水質符合標準。</p>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3 class="text-xl font-semibold mb-2">沉水馬達維護檢測</h3>
-            <p class="text-sm leading-relaxed">定期保養與故障診斷，延長設備壽命並降低停機風險。</p>
+          <!-- Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
+            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-cog-6-tooth"></use></svg></div>
+            <h3 class="text-lg font-semibold mb-2">沉水馬達維護檢測</h3>
+            <p class="text-sm leading-relaxed text-gray-600">定期保養與故障診斷，延長設備壽命並降低停機風險。</p>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3 class="text-xl font-semibold mb-2">水權申請與規劃</h3>
-            <p class="text-sm leading-relaxed">專業協助新申請與補申請流程，合法取水無後顧之憂。</p>
+          <!-- Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
+            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-document-check"></use></svg></div>
+            <h3 class="text-lg font-semibold mb-2">水權申請與規劃</h3>
+            <p class="text-sm leading-relaxed text-gray-600">專業協助新申請與補申請流程，合法取水無後顧之憂。</p>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3 class="text-xl font-semibold mb-2">地下水控制工程</h3>
-            <p class="text-sm leading-relaxed">祛水、點井等整體解決方案，有效掌控工地地下水位。</p>
+          <!-- Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
+            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-arrow-trending-down"></use></svg></div>
+            <h3 class="text-lg font-semibold mb-2">地下水控制工程</h3>
+            <p class="text-sm leading-relaxed text-gray-600">祛水、點井等整體解決方案，有效掌控工地地下水位。</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="projects" class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4" data-animate>
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-emerald-700">成功案例</h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
+            <img src="https://images.unsplash.com/photo-1556767576-66b769da4ec8?auto=format&fit=crop&w=800&q=80" alt="工業井施工" class="w-full h-56 object-cover group-hover:scale-105 transition">
+            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">高雄臨海工業區井深 350m 施工</figcaption>
+          </figure>
+          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
+            <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=800&q=80" alt="農業井測試" class="w-full h-56 object-cover group-hover:scale-105 transition">
+            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">雲林農田灌溉井日抽水量 1500m³</figcaption>
+          </figure>
+          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
+            <img src="https://images.unsplash.com/photo-1588474295171-b9a064aa46b1?auto=format&fit=crop&w=800&q=80" alt="祛水工程" class="w-full h-56 object-cover group-hover:scale-105 transition">
+            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">台中捷運工地祛水點井 42 口</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- 聯絡資訊與表單 -->
-    <section id="contact" class="py-16 bg-white">
-      <div class="max-w-md mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-6">聯絡我們</h2>
-        <div class="space-y-4 text-sm">
-          <p><strong>地址：</strong>540 南投市果稟路 15 號</p>
-          <p><strong>電話：</strong>049‑222‑4356</p>
-          <p><strong>Email：</strong><a href="mailto:a0492224356@gmail.com" class="text-indigo-600 hover:underline">a0492224356@gmail.com</a></p>
-          <p><strong>負責人：</strong>謝春旺 0928‑383‑958</p>
-          <p><strong>業務經理：</strong>江淑珍 0912‑224‑356</p>
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="max-w-2xl mx-auto px-4" data-animate>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">聯絡我們</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-3 text-sm md:text-base">
+            <p><strong>地址：</strong>540 南投市果稟路 15 號</p>
+            <p><strong>電話：</strong>049‑222‑4356</p>
+            <p><strong>Email：</strong><a href="mailto:a0492224356@gmail.com" class="text-emerald-600 hover:underline">a0492224356@gmail.com</a></p>
+            <p><strong>負責人：</strong>謝春旺 0928‑383‑958</p>
+            <p><strong>業務經理：</strong>江淑珍 0912‑224‑356</p>
+          </div>
+          <form action="https://formspree.io/f/your-id" method="POST" class="grid gap-4">
+            <input type="text" name="name" placeholder="姓名" required class="border border-gray-300 p-3 rounded">
+            <input type="email" name="email" placeholder="Email" required class="border border-gray-300 p-3 rounded">
+            <textarea name="message" placeholder="訊息" rows="4" required class="border border-gray-300 p-3 rounded"></textarea>
+            <button type="submit" class="bg-emerald-600 text-white py-3 rounded hover:bg-emerald-700 transition">送出</button>
+          </form>
         </div>
-        <h3 class="text-xl font-semibold mt-8 mb-4">線上留言</h3>
-        <form action="https://formspree.io/f/your-id" method="POST" class="grid gap-4">
-          <input type="text" name="name" placeholder="姓名" required class="border p-3 rounded" />
-          <input type="email" name="email" placeholder="Email" required class="border p-3 rounded" />
-          <textarea name="message" placeholder="訊息" rows="4" required class="border p-3 rounded"></textarea>
-          <button type="submit" class="bg-indigo-600 text-white py-3 rounded hover:bg-indigo-700 transition">送出</button>
-        </form>
       </div>
     </section>
   </main>
 
-  <!-- 頁尾 -->
-  <footer class="bg-gray-800 text-gray-300 py-6">
-    <div class="max-w-3xl mx-auto px-4 text-center text-sm">
-      © 2025 井英股份有限公司 — 版權所有
-    </div>
+  <!-- Footer -->
+  <footer class="bg-emerald-900 text-gray-300 py-6 text-center text-sm">
+    © 2025 井英股份有限公司 — 版權所有
   </footer>
+
+  <!-- Scroll Reveal JS -->
+  <script>
+    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animate-in');observer.unobserve(e.target)}}),},{threshold:.2});document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>
