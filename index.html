@@ -1,141 +1,581 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>井英股份有限公司｜甲等鑿井 · 水井工程</title>
-  <meta name="description" content="政府審定甲等鑿井業者，30 年專業經驗，提供水井設計、施工、沉水馬達維修、水權申請與地下水控制工程整合服務。">
-  <!-- Tailwind CDN：Mobile‑First RWD -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet" />
-  <!-- Heroicons CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/dist/24/outline.min.js" defer></script>
-  <style>
-    /* 互動微動畫 */
-    [data-animate] { opacity:0; transform: translateY(24px); transition:opacity .6s ease, transform .6s ease; }
-    .animate-in { opacity:1; transform: none; }
-    html { scroll-behavior:smooth; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>井英股份有限公司 - 專業鑿井服務</title>
+    <meta name="description" content="井英股份有限公司，30年專業鑿井經驗，政府審定合格甲等鑿井業，提供工業用水、農業用水、民生用水諮詢設計與水權申請服務">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJ3YXRlciIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiPgogICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3dhdGVyKSIvPgo8L3N2Zz4=');
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3498db;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Company Info Section */
+        .company-info {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .info-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .info-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .credentials h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .credentials ul {
+            list-style: none;
+        }
+
+        .credentials li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2c3e50;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .header .container {
+                justify-content: space-between;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .services, .company-info, .contact {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+    </style>
 </head>
-<body class="font-sans antialiased bg-gray-50 text-gray-900">
-  <!-- 導覽列 -->
-  <header class="bg-white/70 backdrop-blur shadow-sm fixed inset-x-0 top-0 z-50">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-      <span class="text-lg md:text-xl font-bold text-emerald-700">井英股份有限公司</span>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#about" class="hover:text-emerald-600">關於</a>
-        <a href="#services" class="hover:text-emerald-600">服務</a>
-        <a href="#projects" class="hover:text-emerald-600">案例</a>
-        <a href="#contact" class="hover:text-emerald-600">聯絡</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="mt-16 md:mt-20">
-    <!-- Hero -->
-    <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center relative bg-fixed bg-center bg-cover" style="background-image:url('https://images.unsplash.com/photo-1508711046807-03fd9a504ea0?auto=format&fit=crop&w=1920&q=80');">
-      <div class="absolute inset-0 bg-emerald-900/50"></div>
-      <div class="relative max-w-xl mx-auto px-4 text-center text-gray-100" data-animate>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-snug drop-shadow-md">政府核可甲等鑿井業者</h1>
-        <p class="text-base sm:text-lg mb-8">30+ 年地下水專業，量身打造安全穩定的取水方案</p>
-        <a href="#contact" class="inline-block rounded-full bg-emerald-600 px-8 py-3 text-white font-semibold shadow-lg hover:bg-emerald-700 transition">立即洽詢</a>
-      </div>
-      <!-- 波浪分隔 -->
-      <svg class="absolute bottom-0 w-full" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1440v80H0V0Z" fill="#fff"/><path d="M0 40s144 40 360 40 360-40 540-40 360 40 540 40V0H0v40Z" fill="#f9fafb"/></svg>
-    </section>
-
-    <!-- 公司簡介 -->
-    <section id="about" class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-4" data-animate>
-        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">公司簡介</h2>
-        <p class="leading-relaxed text-gray-700">井英股份有限公司位於南投市果稟路 15 號，為政府審定之<strong>甲等鑿井業者</strong>。我們以專業技術與豐富實務經驗，協助全台工業、農業、民生單位取得穩定、安全的地下水，並提供水權申請、沉水馬達維護到祛水工程的全方位服務。</p>
-      </div>
-    </section>
-
-    <!-- 服務項目 -->
-    <section id="services" class="py-16 bg-gray-50">
-      <div class="max-w-5xl mx-auto px-4" data-animate>
-        <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center text-emerald-700">主要服務</h2>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <!-- Card -->
-          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
-            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-wrench-screwdriver"></use></svg></div>
-            <h3 class="text-lg font-semibold mb-2">水井設計與施工</h3>
-            <p class="text-sm leading-relaxed text-gray-600">量身規劃井深與濾層，確保水量、水質符合標準。</p>
-          </div>
-          <!-- Card -->
-          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
-            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-cog-6-tooth"></use></svg></div>
-            <h3 class="text-lg font-semibold mb-2">沉水馬達維護檢測</h3>
-            <p class="text-sm leading-relaxed text-gray-600">定期保養與故障診斷，延長設備壽命並降低停機風險。</p>
-          </div>
-          <!-- Card -->
-          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
-            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-document-check"></use></svg></div>
-            <h3 class="text-lg font-semibold mb-2">水權申請與規劃</h3>
-            <p class="text-sm leading-relaxed text-gray-600">專業協助新申請與補申請流程，合法取水無後顧之憂。</p>
-          </div>
-          <!-- Card -->
-          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition" data-animate>
-            <div class="mb-4 text-emerald-600"><svg aria-hidden="true" class="w-8 h-8"><use href="#heroicon-outline-arrow-trending-down"></use></svg></div>
-            <h3 class="text-lg font-semibold mb-2">地下水控制工程</h3>
-            <p class="text-sm leading-relaxed text-gray-600">祛水、點井等整體解決方案，有效掌控工地地下水位。</p>
-          </div>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">💧</div>
+                <div class="company-name">井英股份有限公司</div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav">
+                <a href="#home">首頁</a>
+                <a href="#services">服務項目</a>
+                <a href="#about">關於我們</a>
+                <a href="#contact">聯絡我們</a>
+            </nav>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- 成功案例 -->
-    <section id="projects" class="py-16 bg-white">
-      <div class="max-w-5xl mx-auto px-4" data-animate>
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-emerald-700">成功案例</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
-            <img src="https://images.unsplash.com/photo-1556767576-66b769da4ec8?auto=format&fit=crop&w=800&q=80" alt="工業井施工" class="w-full h-56 object-cover group-hover:scale-105 transition">
-            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">高雄臨海工業區井深 350m 施工</figcaption>
-          </figure>
-          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
-            <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=800&q=80" alt="農業井測試" class="w-full h-56 object-cover group-hover:scale-105 transition">
-            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">雲林農田灌溉井日抽水量 1500m³</figcaption>
-          </figure>
-          <figure class="group relative overflow-hidden rounded-2xl shadow-lg" data-animate>
-            <img src="https://images.unsplash.com/photo-1588474295171-b9a064aa46b1?auto=format&fit=crop&w=800&q=80" alt="祛水工程" class="w-full h-56 object-cover group-hover:scale-105 transition">
-            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-sm text-white">台中捷運工地祛水點井 42 口</figcaption>
-          </figure>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>井英股份有限公司</h1>
+            <p class="subtitle">30年專業鑿井經驗，政府審定合格甲等鑿井業</p>
+            <p class="description">
+                井英股份有限公司，具備有甲等鑿井商執照，於沉水馬達與鑿井業界已有30年以上經驗，台灣從北到南皆可提供專業服務，歡迎來電洽詢。
+            </p>
+            <a href="#contact" class="cta-button">立即諮詢</a>
         </div>
-      </div>
     </section>
 
-    <!-- 聯絡資訊與表單 -->
-    <section id="contact" class="py-16 bg-gray-50">
-      <div class="max-w-2xl mx-auto px-4" data-animate>
-        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-emerald-700">聯絡我們</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-3 text-sm md:text-base">
-            <p><strong>地址：</strong>540 南投市果稟路 15 號</p>
-            <p><strong>電話：</strong>049‑222‑4356</p>
-            <p><strong>Email：</strong><a href="mailto:a0492224356@gmail.com" class="text-emerald-600 hover:underline">a0492224356@gmail.com</a></p>
-            <p><strong>負責人：</strong>謝春旺 0928‑383‑958</p>
-            <p><strong>業務經理：</strong>江淑珍 0912‑224‑356</p>
-          </div>
-          <form action="https://formspree.io/f/your-id" method="POST" class="grid gap-4">
-            <input type="text" name="name" placeholder="姓名" required class="border border-gray-300 p-3 rounded">
-            <input type="email" name="email" placeholder="Email" required class="border border-gray-300 p-3 rounded">
-            <textarea name="message" placeholder="訊息" rows="4" required class="border border-gray-300 p-3 rounded"></textarea>
-            <button type="submit" class="bg-emerald-600 text-white py-3 rounded hover:bg-emerald-700 transition">送出</button>
-          </form>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">營業項目</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">[地下水觀測建井圖片]</div>
+                    <div class="service-icon">🔧</div>
+                    <h3>點井、祛水工程</h3>
+                    <p>在業務或住宅上需要大量用水嗎？或是有水權申請的需求？需要針對用水量有更精密、划算的規劃嗎？究竟如何利用水井（地下水）省去大量的水費？歡迎您與井英聯繫，我們將由負責人親自為您量身訂做。</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">[洗井與抽水機更新圖片]</div>
+                    <div class="service-icon">🏭</div>
+                    <h3>工業、農業用水資訊與設計</h3>
+                    <p>在業務上需要大量用水嗎？需要針對用水量有更精密、划算的規劃嗎？究竟如何利用水井（地下水）省去大量的水費？歡迎您與井英聯繫，我們將由負責人親自為您量身訂做。</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">[深水井開鑿圖片]</div>
+                    <div class="service-icon">⚙️</div>
+                    <h3>水井與沉水馬達維護</h3>
+                    <p>水井在完成之後，還是有可能因為地震、地下水脈變化等多種因素影響之下，發生水質的劣化，或是水位降低等問題。而長年投放於水下的沉水馬達，也是會有故障的可能。若是您有任何水井使用上的故障發生，歡迎您與井英聯繫。</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">[辦公室工作圖片]</div>
+                    <div class="service-icon">📋</div>
+                    <h3>水權新申請與補申請</h3>
+                    <p>無論是工廠、私人住宅、農地灌溉、養殖抽水，自湧泉，地面水、只要您有使用地下水或是地面水，都必須擁有合法的水源使用權狀。目前地方政府開始大幅取締無水權的用戶，被查緝到之後，除了罰單罰款以外，還會有封井的懲罰。</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">[水杯圖片]</div>
+                    <div class="service-icon">🏠</div>
+                    <h3>民生用水諮詢與設計</h3>
+                    <p>住家需要大量用水嗎？或者當地自來水品質不佳？深層地下水是您的最佳選擇，不僅能為您節省水費，深層地下水還可長年供應您健康衛生的水源。歡迎與井英聯繫。</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">[圖片預留位置]</div>
+                    <div class="service-icon">🔍</div>
+                    <h3>水井相關諮詢與設計</h3>
+                    <p>提供專業的水井相關諮詢服務，包含水井設計規劃、水質檢測、以及後續的維護建議，確保您的用水需求得到最適切的解決方案。</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="bg-emerald-900 text-gray-300 py-6 text-center text-sm">
-    © 2025 井英股份有限公司 — 版權所有
-  </footer>
+    <section id="about" class="company-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h2>關於井英股份有限公司</h2>
+                    <p>井英股份有限公司的負責人 謝春旺先生為台灣區鑿井工程工業同業成員，公司內部也同時聘顧了經驗豐富的工程師團隊，無論是負責人或是工程師，皆為擁有數十年從業經驗的資深工程師。</p>
+                    <p>鑿井最重要的除了對於水文地理資料的豐富知識、以及對於機械的熟練掌握之外，更重要的是無法取代的實務經驗，井英股份有限公司正是同時具備了技術、知識、經驗的權威公司。</p>
+                    <p>若是您對於地下水、水井、沉水馬達、水權（地下水）申辦等有任何的疑問，歡迎您與井英聯繫。</p>
+                </div>
+                <div class="credentials">
+                    <h3>資格證照</h3>
+                    <ul>
+                        <li>政府審定合格甲等鑿井業</li>
+                        <li>台灣區鑿井工程工業同業公會</li>
+                        <li>台井會籍字第290號</li>
+                        <li>彰縣水管鑿證甲字第002號</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Scroll Reveal JS -->
-  <script>
-    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animate-in');observer.unobserve(e.target)}}),},{threshold:.2});document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
-  </script>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>聯絡我們</h2>
+            <p>30年以上專業經驗，台灣從北到南皆可提供專業服務</p>
+            <p>歡迎來電洽詢，我們將由負責人親自為您服務</p>
+            <a href="tel:+886-4-xxxx-xxxx" class="cta-button">立即致電</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 井英股份有限公司. All rights reserved. | 政府審定合格甲等鑿井業</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after clicking
+                document.querySelector('.nav').classList.remove('active');
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.95) 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
