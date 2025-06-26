@@ -120,34 +120,39 @@
             line-height: 1.8;
         }
 
-        /* CTA Buttons */
+        /* ---------- CTA Buttons ---------- */
         .cta-buttons {
-            display: flex;
-            gap: 1rem;
+            display: flex;          /* 水平排列 */
+            flex-direction: row;    /* 明確指定橫排 */
+            flex-wrap: wrap;        /* 窄螢幕時自動換行 */
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            gap: 1rem;              /* 按鈕之間的間距 */
         }
-
+        
+        /* 單顆按鈕 */
         .cta-button {
-            display: inline-flex;
+            flex: 0 0 auto;         /* 不被撐到滿版 */
+            display: inline-flex;   /* 讓圖示與文字置中對齊 */
             align-items: center;
             background: #e74c3c;
-            color: white;
+            color: #fff;
             padding: 1rem 2rem;
-            text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: all 0.3s;
+            text-decoration: none;
             box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-            white-space: nowrap;
+            transition: all 0.3s;
+            white-space: nowrap;    /* 保持單行 */
         }
-
+        
+        /* 滑過效果 */
         .cta-button:hover {
             background: #c0392b;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
         }
+        
 
         .line-button {
             background: #00C300;
