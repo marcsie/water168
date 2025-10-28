@@ -61,6 +61,38 @@
   gtag('js', new Date());
   gtag('config', 'G-7HMRPJVZWZ');
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17532851120"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17532851120');
+</script>
+
+
+<!-- Event snippet for Line點擊 conversion page -->
+<script>
+    window.addEventListener('load', function (event) {
+        document.querySelectorAll('[class="cta-button line-button"]').forEach(function (e) {
+            e.addEventListener('click', function () {
+                gtag('event', 'conversion', { 'send_to': 'AW-17532851120/uwHQCJq1ibUbELCnqKhB' });
+            });
+        });
+    });
+</script>
+
+<!-- Event snippet for 電話聯繫 conversion page -->
+<script>
+    window.addEventListener('load', function (event) {
+        document.querySelectorAll('[class="cta-button"]').forEach(function (e) {
+            e.addEventListener('click', function () {
+                gtag('event', 'conversion', { 'send_to': 'AW-17532851120/aarQCMWzibUbELCnqKhB' });
+            });
+        });
+    });
+</script>
 
     <!-- Google tag (gtag.js) event - delayed navigation helper -->
 <script>
